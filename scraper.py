@@ -4,7 +4,7 @@ import requests
 
 
 response = requests.get('https://quotes.toscrape.com/')
-print(response.status_code)
+print(response.status_code) # this status code will tell us if the connection to the site works 
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -15,3 +15,4 @@ authors = soup.find_all("small", attrs={"class":"author"})
 # this is a for loop that concatenates quotes and authors in one line after the webscraping took place in line 46 and 47
 for quote, author in zip(quotes, authors):
     print(quote.text + " - " + author.text)
+#testing
